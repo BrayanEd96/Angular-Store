@@ -1,0 +1,19 @@
+<div class="card-product">
+    <div class="title-section">
+        <h3> {{ product.title }} </h3>
+    </div>
+    <div class="image-section">
+        <img [src]="product.image">
+    </div>
+    <div class="description-section">
+        <div class="description-content">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem dolorem in, fugiat suscipit.
+            </p>
+        </div>
+        <div class="description-content">
+            <strong>Price: {{ product.price|currency|currencyMxn}} </strong>
+            <button type="button" (click)="addCart(product.title)">Añadir al carrito</button>
+        </div>
+    </div>
+</div>

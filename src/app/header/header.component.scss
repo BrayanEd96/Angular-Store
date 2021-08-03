@@ -1,0 +1,44 @@
+header {
+    background-color: #4545da;
+    color: white;
+    width: 100%;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    .main-title {
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .router-nav {
+        margin: 5px;
+        padding: 5px;
+        margin-left: auto;
+        display: flex;
+    }
+
+        .a-router {
+            height: 30px;
+            width: auto;
+            display: flex;
+            margin: 2px 5px;
+            border-radius: 8px;
+            padding: 0 5px;
+
+        }
+
+            .a-router > a {
+                text-decoration: none;
+                color: white;
+                display: block;
+                margin: auto;
+            }
+
+        .a-active {
+            background-color: #b1b1e4;
+        }
+
+        .a-active > a {
+            color: #1a1a8d;
+        }

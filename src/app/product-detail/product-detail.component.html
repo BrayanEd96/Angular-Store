@@ -1,0 +1,19 @@
+<div class="container" *ngIf="product !== undefined">
+    <button class="btn-back" type="button" routerLink="/products">Back</button>
+    <div class="image-container">
+        <img [src]="product.image" alt="">
+    </div>
+    <div>
+        <ul>
+            <li>Product: {{ product.title }}</li>
+            <li>Price: {{ product.price | currency }}</li>
+        </ul>
+        <p>Description: {{ product.description }}</p>
+    </div>
+</div>
+<div class="container" *ngIf="product === undefined">
+    <button class="btn-back" type="button" routerLink="/products">Back</button>
+    <p>
+        Not found this product
+    </p>
+</div>

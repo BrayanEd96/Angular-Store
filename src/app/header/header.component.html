@@ -1,10 +1,16 @@
 <header>
-    <div>
+    <div class="main-title">
         <h1> {{ title }} </h1>
     </div>
-    <div>
-        <a href="/home">Home</a>
-        <a href="/products">Products</a>
-        <a href="/contact">Contact</a>
-    </div>
+    <nav class="router-nav">
+        <div class="a-router" routerLinkActive="a-active">
+            <a routerLink="/home">Home</a>
+        </div>
+        <div class="a-router" routerLinkActive="a-active">
+            <a routerLink="/products">Products</a>
+        </div>
+        <div class="a-router" routerLinkActive="a-active">
+            <a routerLink="/contact">Contact</a>
+        </div>
+    </nav>
 </header>

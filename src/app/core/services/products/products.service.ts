@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from './../../../product/product.model';
+import { Product } from '../../../products/components/product/product.model';
 // import { XMLHttpRequest } from 'xmlhttprequest';
 
 // const dataJson = './products.json';

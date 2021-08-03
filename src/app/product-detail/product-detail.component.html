@@ -6,7 +6,7 @@
     <div>
         <ul>
             <li>Product: {{ product.title }}</li>
-            <li>Price: {{ product.price | currency }}</li>
+            <li>Price: {{ product.price | currency | currencyMxn }}</li>
         </ul>
         <p>Description: {{ product.description }}</p>
     </div>

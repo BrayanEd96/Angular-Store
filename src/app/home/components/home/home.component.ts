@@ -9,6 +9,7 @@ import Swiper from 'swiper';
 export class HomeComponent implements AfterViewInit {
 
   mySwiper: Swiper;
+  propiedadTonta: boolean = true;
 
   ngAfterViewInit(){
     this.mySwiper = new Swiper('.swiper-container');

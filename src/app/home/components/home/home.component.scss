@@ -1,6 +1,11 @@
-main {
-    margin: 20px 50px;
+.container {
+    margin: 20px 100px;
 }
+
+    .banner-container{
+        display: flex;
+        align-items: center;
+    }
 
 .grid-products {
     margin: 10px;

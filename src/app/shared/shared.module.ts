@@ -6,6 +6,8 @@ import { CurrencyMxnPipe } from './pipes/currency-mxn/currency-mxn.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { MaterialModule } from '../material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ],
   exports: [
     CurrencyMxnPipe,

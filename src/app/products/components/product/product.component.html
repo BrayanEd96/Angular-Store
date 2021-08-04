@@ -1,9 +1,9 @@
-<div class="card-product" [routerLink]="['/products', product.id]">
+<div class="card-product">
     <div class="title-section">
         <h3> {{ product.title }} </h3>
     </div>
     <div class="image-section">
-        <img [src]="product.image">
+        <img [routerLink]="['/products', product.id]" [src]="product.image">
     </div>
     <div class="description-section">
         <div class="description-content">
@@ -13,7 +13,9 @@
         </div>
         <div class="description-content">
             <strong>Price: {{ product.price|currency|currencyMxn}} </strong>
-            <button type="button" (click)="addCart(product.title)">Añadir al carrito</button>
+            <div class="group-btn">
+                <button mat-flat-button color="primary" type="button" (click)="addCart(product.title)">Añadir al carrito</button>
+            </div>
         </div>
     </div>
 </div>

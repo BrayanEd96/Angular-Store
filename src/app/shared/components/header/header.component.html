@@ -1,16 +1,25 @@
 <header>
-    <div class="main-title" routerLink="/">
-        <h1> {{ title }} </h1>
-    </div>
-    <nav class="router-nav">
-        <div routerLinkActive="a-active">
-            <a mat-button routerLink="/home">Home</a>
+    <mat-toolbar color="primary">
+        <div class="row middle-md between-md w-100">
+            <div class="col-md-2">
+                <span routerLink="/"> {{ title }} </span>
+            </div>
+            <div class="col-md-3">
+                <div class="row end-md">
+                    <div class="col-md-9">
+                        <nav>
+                            <a mat-button routerLinkActive="a-active" routerLink="/home">Home</a>
+                            <a mat-button routerLinkActive="a-active" routerLink="/products">Products</a>
+                            <a mat-button routerLinkActive="a-active" routerLink="/contact">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="col-md-3">
+                        <button mat-icon-button >
+                            <mat-icon matBadge="5" matBadgeColor="warn" matBadgeSize="small">shopping_cart</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div routerLinkActive="a-active">
-            <a mat-button routerLink="/products">Products</a>
-        </div>
-        <div routerLinkActive="a-active">
-            <a mat-button routerLink="/contact">Contact</a>
-        </div>
-    </nav>
+    </mat-toolbar>
 </header>

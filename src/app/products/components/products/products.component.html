@@ -1,5 +1,7 @@
 <main>
-    <div class="grid-products">
-        <app-product *ngFor="let product of products" [productAsObject]="product"></app-product>
-    </div>
+    <mat-grid-list cols="4">
+        <mat-grid-tile *ngFor="let product of products">
+            <app-product [productAsObject]="product"></app-product>
+        </mat-grid-tile>
+    </mat-grid-list>
 </main>

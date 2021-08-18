@@ -10,14 +10,48 @@ import { Product } from '../product/product.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: Product;
+  product: Product = null;
+  id: string;
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
 
   ngOnInit() {
+    this.getIdParam();
+    this.fetchProduct();
+  }
+
+  getIdParam(){
     this.route.params.subscribe((params: Params) => {
-      const id = params.id;
-      this.product =  this.productsService.getProduct(id);
+      this.id = params.id;
+    })
+  }
+
+  fetchProduct() {
+    this.productsService.getProduct(this.id)
+    .subscribe(product => {
+      this.product = product;
+    });
+  }
+
+  updProduct() {
+    const changes = {
+      "title": "No es de Angular",
+      "price": 4500,
+      "image": "assets/images/stickers1.png"
+    }
+
+    this.productsService.updateProduct(this.id, changes)
+    .subscribe(result => {
+      alert(`Producto ${result} actualizado`);
+      console.log(result);
+      
+    });
+  }
+
+  delProduct() {
+    this.productsService.deleteProduct(this.id)
+    .subscribe(result => {
+      console.log(result);
     });
   }
 

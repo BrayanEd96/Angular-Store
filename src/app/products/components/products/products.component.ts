@@ -11,11 +11,27 @@ import { ProductsService } from '../../../core/services/products/products.servic
 export class ProductsComponent implements OnInit {
 
   products: Product[];
+  newprod: Product;
 
-  constructor(private allProducts: ProductsService){}
+  constructor(private productsService: ProductsService){}
 
   ngOnInit(){
-    this.products = this.allProducts.getAllProducts();
+    this.fetchProducts();
+  }
+
+  fetchProducts(){
+    this.productsService.getAllProducts()
+    .subscribe(products => {
+      this.products = products;
+    });
+  }
+
+  createProduct() {
+    const thenew: Product = {"id":"265","image":"assets/images/camiseta.png","title":"New Camiseta","price":7000,"description":"lorem impsum "}
+    this.productsService.addProduct(thenew)
+    .subscribe(newProduct => {
+      this.newprod = newProduct;
+    });
   }
 
 }

@@ -4,4 +4,6 @@
             <app-product [productAsObject]="product"></app-product>
         </mat-grid-tile>
     </mat-grid-list>
+    <button (click)="createProduct()">click me for add</button>
+    <div *ngIf="newprod !== undefined">This one was created {{newprod.id}}, {{newprod.title}}</div>
 </main>

@@ -10,6 +10,8 @@
         </ul>
         <p>Description: {{ product.description }}</p>
     </div>
+    <button (click)="updProduct()">click me for update</button>
+    <button (click)="delProduct()">click me for delete</button>
 </div>
 <div class="container" *ngIf="product === undefined">
     <button class="btn-back" type="button" routerLink="/products">Back</button>

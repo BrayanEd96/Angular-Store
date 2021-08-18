@@ -1,102 +1,36 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../../products/components/product/product.model';
-// import { XMLHttpRequest } from 'xmlhttprequest';
+import { HttpClient } from '@angular/common/http';
 
-// const dataJson = './products.json';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  products: Product[] = [
-    {
-      id: '1',
-      image: 'assets/img/camiseta.png',
-      title: 'Camiseta',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-        id: '2',
-        image: 'assets/img/hoodie.png',
-        title: 'Hoodie',
-        price: 7000,
-        description: 'bla bla bla bla bla'
-    },
-    {
-        id: '3',
-        image: 'assets/img/mug.png',
-        title: 'Mug',
-        price: 90000,
-        description: 'bla bla bla bla bla'
-    },
-    {
-        id: '4',
-        image: 'assets/img/pin.png',
-        title: 'Pin',
-        price: 1000,
-        description: 'bla bla bla bla bla'
-    },
-    {
-        id: '5',
-        image: 'assets/img/stickers1.png',
-        title: 'Stickers',
-        price: 20000,
-        description: 'bla bla bla bla bla'
-    },
-    {
-        id: '6',
-        image: 'assets/img/stickers2.png',
-        title: 'Stickers',
-        price: 80000,
-        description: 'bla bla bla bla bla'
-    }
-  ];
+  constructor(private http: HttpClient) {
+
+  }
 
   getAllProducts() {
-    return this.products
+    return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
 
   getProduct(id: string) {
-    return this.products.find(item => id === item.id);
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
+  }
+
+  addProduct(product: Product ) {
+    return this.http.post<Product>(`${environment.url_api}/products`, product);
+  }
+
+  updateProduct(id: string, product: Partial<Product>){
+    return this.http.put(`${environment.url_api}/products/${id}`, product);
+  }
+
+  deleteProduct(id: string) {
+    return this.http.delete(`${environment.url_api}/products/${id}`);
   }
 }
 
-
-
-
-
-
-
-
-
-// export class ProductsService {
-
-//   constructor() { }
-
-//   fetchDAta(url: string) {
-//     return new Promise<void>((resolve, reject) => {
-//       const xhttp = new XMLHttpRequest();
-//       xhttp.open('GET', url, true);
-//       xhttp.onreadystatechange = (() => {
-//         (xhttp.readyState === 4) ? (xhttp.status === 200) ? resolve(JSON.parse(xhttp.responseText)) : reject(new Error("Error")) : false;
-//       });
-//       xhttp.send();
-//     })
-//   }
-
-//   getAllProducts() {
-//     this.fetchDAta(dataJson)
-//     .then((response) => {
-//       return response;
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//     })
-//   }
-
-//   getProduct(id: number){
-
-//   }
-// }

@@ -1,22 +1,17 @@
-<div class="card-product">
-    <div class="title-section">
-        <h3> {{ product.title }} </h3>
-    </div>
-    <div class="image-section">
-        <img [routerLink]="['/products', product.id]" [src]="product.image">
-    </div>
-    <div class="description-section">
-        <div class="description-content">
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem dolorem in, fugiat suscipit.
-            </p>
-        </div>
-        <div class="description-content">
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h3> {{ product.title }} </h3>
+        </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [routerLink]="['/products', product.id]" [src]="product.image">
+    <mat-card-content>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem dolorem in, fugiat suscipit.
             <strong>Price: {{ product.price|currency|currencyMxn}} </strong>
-            <div class="group-btn">
-                <button mat-flat-button color="primary" type="button" (click)="addCart(product.title)">Añadir al carrito</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button color="primary" type="button" (click)="addCart(product.title)">Añadir al carrito</button>
+    </mat-card-actions>
+</mat-card>

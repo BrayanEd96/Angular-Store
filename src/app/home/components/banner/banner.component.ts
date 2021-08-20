@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class BannerComponent {
 
     images: string[] = [
-      'assets/img/banner-1.jpg',
-      'assets/img/banner-2.jpg',
-      'assets/img/banner-3.jpg'
+      'assets/images/banner-1.jpg',
+      'assets/images/banner-2.jpg',
+      'assets/images/banner-3.jpg'
     ]
 
 }
